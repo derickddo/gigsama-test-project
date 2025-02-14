@@ -3,7 +3,7 @@
 ## Authentication
 I used **Token-Based Authentication** because it provides a stateless, scalable, and secure way to authenticate users. Each authenticated user receives a unique token, which they must include in their requests. This method allows:
 - Secure API access.
-- Easier integration with mobile and third-party applications.
+- Easier integration.
 - Reduced server load since there are no session-based authentications.
 
 ## Password Encryption
