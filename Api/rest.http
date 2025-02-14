@@ -1,0 +1,17 @@
+POST "http://127.0.0.1:8000/api/signin/"
+Content-Type: application/json
+
+{
+    "email": "dansoderrick@gmail.com",
+    "password": "password"
+}
+
+###
+POST "http://127.0.0.1:8000/api/signup/"
+Content-Type: application/json
+
+{
+    "email": "dansoderrick@gmail.com",
+    "password": "password",
+    "full_name": "Derrick Danso"
+}
