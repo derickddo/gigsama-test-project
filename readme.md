@@ -215,9 +215,9 @@ HEADER : {
 ```
 
 ### Get patients and their assigned doctor with actionable steps, doctor note an reminders if any
-If the user making this request is has a role of doctor and has been assigned with a patient or patients, notes given to these patient would be decrypted and shown
-if not you would be forbidden to make the request any or shows "No patients found"
-Althoug the note are encrypted and stored in the database.
+If the user making this request has a role of doctor and has been assigned with a patient or patients, notes given to these patients would be decrypted and shown, but
+if not you would be forbidden to make the request or shows "No patients found"
+Although the note are encrypted and stored in the database.
 
 ```GET http://127.0.0.1:8000/api/patients```
 ```
