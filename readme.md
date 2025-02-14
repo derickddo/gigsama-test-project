@@ -105,6 +105,7 @@ class Command(BaseCommand):
 
 ## Tech stack Used
 Django
+
 Django Rest Framework
 
 ## Endpoint and Output
