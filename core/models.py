@@ -69,14 +69,7 @@ class ActionableStep(models.Model):
 
     def __str__(self):
         return f"{self.step_type} - {self.actionable_step}"
-    
-    def save(self, *args, **kwargs):
-        """Cancel old tasks when a new note is added."""
-        if self.pk:  # If updating an existing object
-            from .tasks import send_reminder
-            send_reminder.AsyncResult(str(self.pk)).revoke(terminate=True)
-        
-        super().save(*args, **kwargs)
+
         
 
 class Reminder(models.Model):

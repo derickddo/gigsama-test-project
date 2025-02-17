@@ -134,8 +134,9 @@ class PatientListAndActionView(APIView):
             print(f"due_date: {due_date}")
             step_note = new_steps[step][0]
             print(f"step_note: {step_note}")
-            actionable_step = ActionableStep.objects.create(patient=patient, actionable_step=step_note, note=note, step_type=step_type, due_date=due_date) 
-            actionable_step.save()
+            if step_type != 'due_date':
+                actionable_step = ActionableStep.objects.create(patient=patient, actionable_step=step_note, note=note, step_type=step_type, due_date=due_date) 
+                actionable_step.save()
         
         # get all the actionable steps
         actionable_steps = ActionableStep.objects.filter(patient=patient)
