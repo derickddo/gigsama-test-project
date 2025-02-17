@@ -250,13 +250,6 @@ HEADER : {
 				"completed": false,
 				"doctor_note": "Patient should take amoxicillin daily for 7 days and buy a thermometer."
 			},
-			{
-				"actionable_step": "21 Feb 2025",
-				"due_date": "2025-02-21T00:00:00Z",
-				"step_type": "due_date",
-				"completed": false,
-				"doctor_note": "Patient should take amoxicillin daily for 7 days and buy a thermometer."
-			}
 		]
 	}
 ]
