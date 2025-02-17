@@ -135,7 +135,7 @@ Django Rest Framework
 ```
 HEADER : {
     Content-Type: "application/json"
-    Token: "*******"
+    Authorization: "*******"
 }
 ```
 
@@ -170,7 +170,7 @@ HEADER : {
 ```
 HEADER : {
     Content-Type: "application/json"
-    Token: "*******"
+    Authorization: "*******"
 }
 ```
 
@@ -198,7 +198,7 @@ HEADER : {
 ```
 HEADER : {
     Content-Type: "application/json"
-    Token: "*******"
+    Authorization: "*******"
 }
 ```
 
@@ -215,7 +215,7 @@ HEADER : {
 ]
 ```
 
-### Get patients and their assigned doctor with actionable steps, doctor note an reminders if any
+### Get patients and their assigned doctor with actionable steps, doctor note 
 If the user making this request has a role of doctor and has been assigned with a patient or patients, notes given to these patients would be decrypted and shown, but
 if not you would be forbidden to make the request or shows "No patients found"
 Although the note are encrypted and stored in the database.
@@ -224,7 +224,7 @@ Although the note are encrypted and stored in the database.
 ```
 HEADER : {
     Content-Type: "application/json"
-    Token: "*******"
+    Authorization: "*******"
 }
 ```
 
@@ -261,7 +261,7 @@ HEADER : {
 ```
 HEADER : {
     Content-Type: "application/json"
-    Token: "*******"
+    Authorization: "*******"
 }
 ```
 #### Data Input
@@ -291,4 +291,43 @@ HEADER : {
 	},
 	
 ]
+```
+
+### Get a patient his or her actionable steps and reminders
+```
+GET http://127.0.0.1:8000/api/patients/get-patient
+HEADER 'Authorization: Token *****'
+```
+
+```
+{
+	"email": "derick@gmail.com",
+	"full_name": "James Danso Okyere",
+	"actionable_steps": [
+		{
+			"actionable_step": "1. Buy a thermometer.",
+			"due_date": "2025-02-24T00:00:00Z",
+			"step_type": "checklist",
+			"completed": false,
+			"doctor_note": "Patient should take amoxicillin daily for 7 days and buy a thermometer."
+		},
+		{
+			"actionable_step": "1. Take amoxicillin daily for 7 days.",
+			"due_date": "2025-02-24T00:00:00Z",
+			"step_type": "plan",
+			"completed": false,
+			"doctor_note": "Patient should take amoxicillin daily for 7 days and buy a thermometer."
+		}
+	],
+	"reminders": [
+		{
+			"reminder_content": "checklist: 1. Buy a thermometer. due on 2025-02-24 00:00:00+00:00",
+			"reminder_date": "2025-02-24T00:00:00Z"
+		},
+		{
+			"reminder_content": "plan: 1. Take amoxicillin daily for 7 days. due on 2025-02-24 00:00:00+00:00",
+			"reminder_date": "2025-02-24T00:00:00Z"
+		}
+	]
+}
 ```
